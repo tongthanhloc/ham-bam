@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính MD5 Hash</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</head>
+<style>
+    [class*="col-"]{
+        padding: 0px;
+    }
+</style>
+
+<body>
+    <table style="margin: auto;">
+        <tr>
+            <th colspan="2">
+                <h1>Tính MD5 Hash</h1>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <label for="inputText1">Nhập chuỗi cần mã hóa:</label>
+            </td>
+            <td>
+                <input type="text" style = "height: 25px; width: 300px;" id="inputText1"> 
+            </td>
+        </tr>
+        <tr >
+            <th colspan="2"><button onclick="calculateAndDisplayMD5()" style="margin: auto 5px;">Tính MD5</button></th>
+        </tr>
+        <tr>
+            <td><label for="inputText1">Chuỗi đã  mã hóa:</label></td>
+            <td><input type="text" style = "height: 25px; width: 300px;" id="result" readonly></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculateAndDisplayMD5() {
+            var inputText1 = document.getElementById("inputText1").value;
+            var hash = md5(inputText1);
+            var resultInput = document.getElementById("result");
+            resultInput.value = hash;
+        }
+    </script>
+</body>
+</html>
